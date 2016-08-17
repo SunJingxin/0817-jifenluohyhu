@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta name="description" content="哦哦哦哦哦哦哦哦哦哦哦" />
+    <title>北京，落户积分，来算算你有多少分</title>
+      <script>
+        (function (doc, win) {
+            var docEl = doc.documentElement;
+            var resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize';
+            var recalc = function () {
+                var clientWidth = docEl.clientWidth;
+                if (!clientWidth) return;
+                docEl.style.fontSize = (clientWidth/16).toFixed(1) + 'px';
+            };
+            recalc();
+            if (!doc.addEventListener) return;
+            win.addEventListener(resizeEvt, recalc, false);
+        })(document, window);
+        //640px时1rem是40px
+     </script>
+     <link rel="stylesheet" type="text/css" href="./reset.css"/>
+     <script src="./zepto.min.js"></script>
+</head>
+<style type="text/css">
+  /*#wrapp{
+    background-color: rgba(0,0,0,0.5); 
+    width: 16rem;
+    height: 25.225rem;
+  }
+    #wrapp img{
+      width:16rem ;
+    }*/
+   .next{
+  width: 11.05rem;
+  height: 1.75rem;
+  background-color: #FFAE1F;
+  text-align: center;;
+  line-height: 1.75rem;
+  color: #fff;
+  border-radius: 0.9rem;
+  position: absolute;
+  top: 15.5rem; 
+  left: 0.78rem;
+}
+.ques_13{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 16rem;
+  height: 25.225rem;
+  background-image: url(./manzu.png);
+  background-size: 16rem 25.225rem;
+  display: none;
+}
+.ques_13_p1{
+  font-size: 0.75rem;
+  margin-top:8.55rem;
+  padding:0 1.84rem;
+  color: red;
+  text-align: center;
+}
+.ques_13_p2{
+  padding:1rem 1.84rem;
+  text-align: center;
+}
+.ques_13_f{
+  width: 8.2rem;
+  height: 2.425rem;
+  background-image: url(./cout.png);
+  background-size: 8.2rem 3.025rem;
+  margin:  0 auto;
+  margin-top: 0.5rem;
+  color: red;
+  text-align: center;
+  overflow: hidden;
+  padding-top: 0.6rem;
+}
+.ques_13_f span:nth-of-type(1){
+  font-size:1.6rem ;
+}
+.ques_13_f span:nth-of-type(2){
+  font-size:1.1rem;
+}
+.ques_14{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 16rem;
+  height: 25.225rem;
+  background-image: url(./nomanzu.png);
+  background-size: 16rem 25.225rem;
+  display: none;
+}
+.ques_14_p1{
+  font-size: 1rem;
+  margin-top:8.55rem;
+  padding:0 1.84rem;
+  color: red;
+}
+.ques_14_p2{
+  padding:1rem 1.84rem;
+}
+.ques_13_a1{
+  display: block;
+  width: 11.05rem;
+  height: 1.75rem;
+  background-color: #FFAE1F;
+  text-align: center;;
+  line-height: 1.75rem;
+  color: #fff;
+  border-radius: 0.7rem;
+  margin:0 auto;
+  margin-top: 0.8rem; 
+  margin-left: 2.65rem;
+  border-radius: 0.9rem;
+}
+.ques_13_a2{
+  display: block;
+  width: 11.05rem;
+  height: 1.75rem;
+  background-color: #FFAE1F;
+  text-align: center;;
+  line-height: 1.75rem;
+  color: #fff;
+  border-radius: 0.7rem;
+  margin:0 auto;
+  margin-top: 0.8rem; 
+  margin-left: 2.65rem;
+  border-radius: 0.9rem;
+}
+.hide1{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 16rem;
+  height: 25.2rem;
+  background-color: rgba(0,0,0,1);
+  overflow: hidden;
+}
+.hide2{
+  width: 13.0rem;
+  height: 19.0rem;
+  background-image: url(xia1.png);
+  background-size: 13.0rem 19.0rem;
+  margin: 0 auto;
+  margin-top: 3rem;
+  overflow: hidden;
+}
+.xiazai{
+  margin: 0 auto;
+  margin-top: 13.4rem;
+}
+.fenxiang{
+ margin: 0 auto;
+ margin-top: 0.8rem;
+}
+.fenxiang_div, .xiazai_div{
+  width: 16rem;
+  height: 25.2rem;
+  background-color: rgba(0,0,0,0.5);
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.fenxiang_div img, .xiazai_div img{
+  width: 16rem;
+}
+</style>
+	<body>
+	  <!--<div id="wrapp">
+	  	<img src="backgroudTrips.png"/>
+	  </div>	-->
+	  	<div class="hide1">
+	      	<div class="hide2">
+	          <a class="ques_13_a1 xiazai">下载银湖网App
+	          	<div class="xiazai_div">
+	            	<img src="backgroudTrips.png">
+	            </div>
+	          </a>
+	          <a class="ques_13_a2 fenxiang">
+	          	分享给好友
+	          </a>
+	      	</div>
+	    </div>
+	  <script>
+	  $(document).ready(function(){
+ 	  var ua = navigator.userAgent;
+ 	  var img1=localStorage.getItem("idd");
+ 	  if(img1!=null){
+ 	  	 $(".hide2")[0].style.backgroundImage="url("+img1+")";
+ 	  }
+ 	   if( 1 ){	            
+           if(ua.indexOf('iPhone') >= 0){
+	           window.location.href="https://itunes.apple.com/cn/app/yin-hu-wang/id957750818?mt=8";
+	       }else if(ua.indexOf('Android') >= 0){
+	           window.location.href="http://a.app.qq.com/o/simple.jsp?pkgname=com.yinhu.app";
+	       }
+        }
+	  })
+	  </script>
+	</body>
+</html>

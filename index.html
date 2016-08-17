@@ -1,0 +1,940 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta name="description" content="银湖网-A股上市公司背景您的财富升值利器" />
+    <title>北京，落户积分，来算算你有多少分</title>
+      <script>
+        (function (doc, win) {
+            var docEl = doc.documentElement;
+            var resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize';
+            var recalc = function () {
+                var clientWidth = docEl.clientWidth;
+                if (!clientWidth) return;
+                docEl.style.fontSize = (clientWidth/16).toFixed(1) + 'px';
+            };
+            recalc();
+            if (!doc.addEventListener) return;
+            win.addEventListener(resizeEvt, recalc, false);
+        })(document, window);
+        //640px时1rem是40px
+     </script>
+     <link rel="stylesheet" type="text/css" href="./reset.css"/>
+     <!--<link rel="stylesheet" type="text/css" href="css/new_file.css"/>-->
+     <script src="./zepto.min.js"></script>
+  
+</head>
+
+<style type="text/css">
+body{
+  background-color: #0074F1;
+}
+.bigBox{
+  width: 16rem;
+  height: 25.225rem;
+  position: relative;
+}
+.loadPage{
+  overflow: hidden;
+  width: 16rem;
+  height: 25.225rem;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: #0074F1;
+  z-index: 999;
+}
+.loadPage>img{
+  width: 16.0rem;
+  height: 5.0rem;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+}
+.loadBar{
+  width:12.8rem;
+  height: 0.5rem;
+  margin:0 auto;
+  background-color:  #3076A4;
+  border-radius:0.225rem;
+  margin-top: 10.0rem;
+}
+.loadBar>i{
+ display: block;
+ width: 0%;
+ height: 0.5rem;
+ border-radius: 0.225rem;
+ background-color: #FFD200;
+}
+.loadPenc{
+  text-align: center;
+  color: #fff;
+  margin-top: 0.8rem;
+  font-size: 0.675rem;
+}
+.fmPage{
+  background-color: red;
+  width: 16.0rem;
+  height:25.225rem;
+  background-image: url(./start.png);
+  background-size: 16rem 25.225rem;
+  overflow: hidden;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 99;
+}
+.fmPage>.btn{
+  display: block;
+  width: 12.8rem;
+  height: 1.8rem;
+  background-color: #FFAE1F;
+  border-radius: 0.85rem;
+  font-size: 1.15rem;
+  color: #ffffff;
+  margin: 0 auto; 
+  margin-top: 21.2rem;
+  text-align: center;
+  line-height:1.8rem;
+}
+.jifen{
+  display: none;
+  position: absolute;
+  top: 0.85rem;
+  left: 6.05rem;
+  width: 5.5rem;
+  height: 2.15rem; 
+  font-size: 0;
+  overflow: hidden;
+  z-index: 999;
+  border-bottom: 0.1rem solid #10EEF9;
+}
+.jifen>span{
+  display: inline-block;
+  color:#0CD9F7;
+  font-size: 0.85rem;
+  margin-top: 0.86rem;
+}
+.jifen .right{
+  font-size:1.2rem;
+  color: #FAEE00; 
+  float: right; 
+   margin-top: 0.7rem;
+}
+
+.main{
+  width: 16rem;
+  height: 25.225rem;
+  background-image: url(./main.png);
+  background-size: 16rem 25.225rem;
+  position:relative; 
+  display: none;
+
+}
+.main>div{
+ position: absolute;
+ top: 5.3rem;
+ left: 1.6rem;
+ display: none;
+ width: 14.3rem;
+}
+.main .ques_1{
+  display: block;
+}
+.main>div .title{
+  font-size: 0.75rem;
+  line-height: 1rem;
+  color: #4A9BD0;
+  width: 12.45rem;
+}
+.main>div .listnone{
+  overflow: hidden;
+}
+.main>div .listnone li{
+  width: 11.7rem;
+  min-height: 0.7rem;
+  border-radius: 0.25rem;
+  border: 0.05rem solid #00A0E9;
+  padding-left: 0.5rem;
+  margin-top:0.5rem; 
+  font-size: 0.7rem;
+  padding: 0.45rem 0.5rem;
+}
+.main>div .listnone .listnone_li{
+  background-color: #00A0E9;
+}
+.next{
+  width: 11.05rem;
+  height: 1.75rem;
+  background-color: #FFAE1F;
+  text-align: center;;
+  line-height: 1.75rem;
+  color: #fff;
+  border-radius: 0.9rem;
+  position: absolute;
+  top: 15.5rem; 
+  left: 0.78rem;
+}
+.ques_13{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 16rem;
+  height: 25.225rem;
+  background-image: url(./manzu.png);
+  background-size: 16rem 25.225rem;
+  display: none;
+}
+.ques_13_p1{
+  font-size: 0.75rem;
+  margin-top:8.55rem;
+  padding:0 1.84rem;
+  color: red;
+  text-align: center;
+}
+.ques_13_p2{
+  padding:1rem 1.84rem;
+  text-align: center;
+}
+.ques_13_f{
+  width: 8.2rem;
+  height: 2.425rem;
+  background-image: url(./cout.png);
+  background-size: 8.2rem 3.025rem;
+  margin:  0 auto;
+  margin-top: 0.5rem;
+  color: red;
+  text-align: center;
+  overflow: hidden;
+  padding-top: 0.6rem;
+}
+.ques_13_f span:nth-of-type(1){
+  font-size:1.6rem ;
+}
+.ques_13_f span:nth-of-type(2){
+  font-size:1.1rem;
+}
+.ques_14{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 16rem;
+  height: 25.225rem;
+  background-image: url(./nomanzu.png);
+  background-size: 16rem 25.225rem;
+  display: none;
+}
+.ques_14_p1{
+  font-size: 1rem;
+  margin-top:8.55rem;
+  padding:0 1.84rem;
+  color: red;
+}
+.ques_14_p2{
+  padding:1rem 1.84rem;
+}
+.ques_13_a1{
+  display: block;
+  width: 11.05rem;
+  height: 1.75rem;
+  background-color: #FFAE1F;
+  text-align: center;;
+  line-height: 1.75rem;
+  color: #fff;
+  border-radius: 0.7rem;
+  margin:0 auto;
+  margin-top: 0.8rem; 
+  margin-left: 2.65rem;
+  border-radius: 0.9rem;
+}
+.ques_13_a2{
+  display: block;
+  width: 11.05rem;
+  height: 1.75rem;
+  background-color: #FFAE1F;
+  text-align: center;;
+  line-height: 1.75rem;
+  color: #fff;
+  border-radius: 0.7rem;
+  margin:0 auto;
+  margin-top: 0.8rem; 
+  margin-left: 2.65rem;
+  border-radius: 0.9rem;
+}
+.hide1{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 16rem;
+  height: 25.2rem;
+  background-color: rgba(0,0,0,1);
+  overflow: hidden;
+  display: none;
+}
+.hide2{
+  width: 13.0rem;
+  height: 19.0rem;
+  background-image: url(xia1.png);
+  background-size: 13.0rem 19.0rem;
+  margin: 0 auto;
+  margin-top: 3rem;
+  overflow: hidden;
+}
+.xiazai{
+  margin: 0 auto;
+  margin-top: 13.4rem;
+}
+.fenxiang{
+ margin: 0 auto;
+ margin-top: 0.8rem;
+}
+.fenxiang_div, .xiazai_div{
+  width: 16rem;
+  height: 25.2rem;
+  background-color: rgba(0,0,0,0.5);
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: none;
+}
+.fenxiang_div img, .xiazai_div img{
+  width: 16rem;
+}
+</style>
+	<body>
+	<!--icon-->
+	<div style='margin:0 auto;width:0px;height:0px;overflow:hidden;'>
+	<img src="logo400.png" width='700'>
+	</div>
+    <!--内容-->
+    
+    <div class="bigBox">
+ 	 <div class="loadPage">	  	
+	  	<div class="loadBar">
+	  	  <i></i>
+	  	</div>
+	  	<div class="loadPenc">
+	  	 loading
+	  	 <span>100%</span>
+	  	</div>
+	  	<!--<img src="./bottom.png"/>-->
+	  </div> 
+	 <div class="fmPage">
+	  	<a class="btn ">开始计算</a> 
+	  </div> 
+	  <div class="jifen">
+	  	<span class="left">积分:</span>
+	  	<span class="right">0</span>
+	  </div>
+	  <div class="main">
+	      <div class="ques_1" >
+	      <h3 class="title">1.选择下列你符合的情况（多选）</h3>
+	      <ul class="listnone" >
+	        <li value="0" class="listnone1">持有北京市居住证</li>
+	        <li value="20" class="listnone2">年龄不超过45周岁</li>
+	        <li value="0" class="listnone3">在京连续缴纳社会保险7年及以上</li>
+	        <li value="0" class="listnone5">无违法犯罪记录</li>
+	      </ul>
+	      <div class="next">
+	      	下一步
+	      </div>
+	    </div> 
+	   <div class="ques_2" >
+	      <h3 class="title">2.输入你的连续缴社保年限：</h3>
+          <ul class="listnone">
+          <li value="1"  class="listnone1">七年</li>
+          <li value="1" class="listnone2">八年</li>
+          <li value="1" class="listnone3">九年</li>
+          <li value="1" class="listnone4">十年</li>
+          <li value="1"  class="listnone5">十年以上</li>
+        </ul>
+	      <div class="next">
+	      	下一步
+	      </div> 
+	    </div>
+	 <div class="ques_4" >
+        <h3 class="title">4.在合法租赁的住房或单位宿舍连续居住年限</h3>
+        <ul class="listnone">
+          <li value="0.5"  class="listnone1">一年</li>
+          <li value="0.5" class="listnone2">两年</li>
+          <li value="0.5" class="listnone3">三年</li>
+          <li value="0.5" class="listnone4">三年以上</li>
+          <li value="0.5"  class="listnone5">无</li>
+        </ul>
+        <div class="next">
+          下一步
+        </div>
+      </div>
+	    <div class="ques_3" >
+ 	      <h3 class="title">3.在自有产权连续居住年限</h3>
+	        <ul class="listnone">
+          <li value="1"  class="listnone1">一年</li>
+          <li value="1" class="listnone2">两年</li>
+          <li value="1" class="listnone3">三年</li>
+          <li value="1" class="listnone4">三年以上</li>
+          <li value="1"  class="listnone5">无</li>
+        </ul>
+	      <div class="next">
+	      	下一步
+	      </div> 
+	    </div>
+
+
+	    <div class="ques_5" >
+	      <h3 class="title">5.选择你的最高学历</h3>
+	      <ul class="listnone">
+	      	<li value="10.5"  class="listnone1">大学专科（含高职）</li>
+	      	<li value="15" class="listnone2">大学本科</li>
+	      	<li value="26" class="listnone3">硕士</li>
+	      	<li value="37" class="listnone4">博士</li>
+	      	<li value="0"  class="listnone5">其他</li>
+	      </ul>
+	      <div class="next">
+	      	下一步
+	      </div>
+	    </div>
+      <div class="ques_6" >
+        <h3 class="title">6.居住地从城市六区转移到其他区域</h3>
+        <ul class="listnone">
+          <li value="10.5"  class="listnone1">一年</li>
+          <li value="15" class="listnone2">两年</li>
+          <li value="26" class="listnone3">三年</li>
+          <li value="37" class="listnone4">三年以上</li>
+          <li value="0"  class="listnone5">无</li>
+        </ul>
+        <div class="next">
+          下一步
+        </div>
+      </div>
+      <div class="ques_7" >
+        <h3 class="title">7.就业地和居住区域由城六区转移到其他区域</h3>
+        <ul class="listnone">
+          <li value="10.5"  class="listnone1">一年</li>
+          <li value="15" class="listnone2">两年</li>
+          <li value="26" class="listnone3">三年</li>
+          <li value="37" class="listnone4">三年以上</li>
+          <li value="0"  class="listnone5">无</li>
+        </ul>
+        <div class="next">
+          下一步
+        </div>
+      </div>	 
+      <div class="ques_8">
+        <h3 class="title">8.荣誉表彰</h3>
+        <ul class="listnone">
+          <li value="20" class="listnone1">科技文化及创新创业大赛获国家级奖</li>
+          <li value="20" class="listnone2">科技文化及创新创业大赛获市级奖项</li>
+          <li value="20" class="listnone3">任国家高新企业高管或核心技术人员</li>
+          <li value="20" class="listnone1">在创业企业投资或就业</li>
+          <li value="20" class="listnone2">以上皆无</li>
+        </ul>  
+        <div class="next">
+          下一步
+        </div>
+      </div>
+	    <div class="ques_9">
+	      <h3 class="title">9.荣誉表彰</h3>
+	      <ul class="listnone">
+	      	<li value="20" class="listnone1">省部级以上劳模</li>
+	      	<li value="20" class="listnone2">全国道德模范</li>
+	      	<li value="20" class="listnone3">全国见义勇为英雄模范</li>
+	      	<li value="20" class="listnone4">首都见义勇为模范</li>
+	      	<li value="20" class="listnone5">以上皆无</li>
+	      </ul>	 
+	      <div class="next">
+	      	下一步
+	      </div>
+	    </div>
+	    <div class="ques_10">
+	      <h3 class="title">10.选择下列你符合的纳税情况：</h3>
+	      <ul class="listnone">
+	      	<li value="6" class="listnone1">平均每年个人所得税纳税额10万及以上</li>
+	      	<li value="6" class="listnone2">作为个体工商户，平均每年纳税15万元及以上</li>
+	      	<li value="6" class="listnone2">其他</li>
+	      </ul>	
+	     <div class="next">
+	      	下一步
+	     </div>
+	    </div>
+	    <div class="ques_11">
+	      <h3 class="title">11.你有涉税违法行为记录？</h3>
+        <ul class="listnone">
+          <li value="10.5"  class="listnone1">一次</li>
+          <li value="15" class="listnone2">两次</li>
+          <li value="26" class="listnone3">三次</li>
+          <li value="37" class="listnone4">三次以上</li>
+          <li value="0"  class="listnone5">无</li>
+        </ul>
+	      <div class="next">
+	      	下一步
+	      </div>	      
+	    </div>	
+	    <div class="ques_12">
+        <h3 class="title">12.你有多少条行政拘留记录？</h3>
+        <ul class="listnone">
+          <li value="10.5"  class="listnone1">一次</li>
+          <li value="15" class="listnone2">两次</li>
+          <li value="26" class="listnone3">三次</li>
+          <li value="37" class="listnone4">三次以上</li>
+          <li value="0"  class="listnone5">无</li>
+        </ul>
+	      <div class="next">
+	      	下一步
+	      </div>	      
+	    </div>	  
+	  </div>
+<!-- 满足  	-->
+	    <div class="ques_13">
+	      <p class="ques_13_p1">你的落户积分是：</p>
+	      <div class="ques_13_f">
+	      	<span>100</span>
+	      	<span>分</span>
+	      </div>
+	      <p class="ques_13_p2">
+	       <span>你的积分超过</span>
+	       <span>2.4%</span>
+	       <span>的用户</span>
+	      </p>
+	      <a class="ques_13_a1 lastBtn1">再算一遍</a>
+	      <a class="ques_13_a2 lastBtn2">加分攻略</a>
+	      <div class="hide1">
+	      	<div class="hide2">
+	          <a class="ques_13_a1 xiazai">下载银湖网App
+	          	<div class="xiazai_div">
+	            	<img src="backgroudTrips.png">
+	            </div>
+	          </a>
+	          <a class="ques_13_a2 fenxiang">
+	          	分享给好友
+	            <div class="fenxiang_div">
+	            	<img src="fenxiang.png">
+	            </div>
+	          </a>
+	      	</div>
+	      </div>
+	    </div>
+<!--不满足-->
+	    <div class="ques_14">
+	      <p class="ques_14_p1">你还不满足申请积分条件!</p>
+	      <p class="ques_14_p2">根据《北京市积分落户管理办法(试行)》中规定，4个条件必须同时符合，才能申请积分落户。</p>
+	      <a class="ques_13_a1 lastBtn1">再算一遍</a>
+	      <a class="ques_13_a2 lastBtn2">加分攻略</a>
+	      <div class="hide1">
+	      	<div class="hide2">
+	          <a class="ques_13_a1 xiazai">下载银湖网App
+	          	<div class="xiazai_div">
+	            	<img src="backgroudTrips.png">
+	            </div>
+	          </a>
+	          <a class="ques_13_a2 fenxiang">分享给好友
+	          	<div class="fenxiang_div">
+	            	<img src="fenxiang.png">
+	            </div>
+	          </a>
+	      </div>
+	      </div>
+	    </div>
+	  <!--分享页面-->
+<script>
+
+var integral=0;
+var xueli=0;
+var fangzi=0;
+$(document).ready(function(){
+//
+//主体部分	
+  var t=0;
+  // 首页动画加载
+  var clearT=setInterval(function(){			
+	t++;
+	if(t<=100){
+	  $(".loadBar i").css("width",t+"%")
+	 $(".loadPenc span").html(t+"%")
+   }
+   if(t>100){
+   	clearInterval(clearT);
+   	$(".loadPage").css("display","none")
+   }
+  })
+  // 开始页码
+$(".fmPage .btn").tap(function(){
+    $(".fmPage").css("display","none");
+    $(".jifen").css("display","block")
+    $(".main").css("display","block")
+}) 
+// 点击li  改变背景颜色
+$(".listnone").tap(function (e) {
+    if($(e.target).parent()[0].className=="listnone"){
+      if($(e.target).css("background-color")=="rgb(0, 160, 233)"){
+      	 $(e.target).css("background-color","rgba(0, 0, 0, 0)");
+       }
+      else{
+       $(e.target).css("background-color","#00A0E9");
+      }
+    }   
+})
+
+  //第一项目
+  $(".ques_1 .next").tap(function (e) {
+	  var sun=0;
+	  $(".ques_1 .listnone li").each(function(ind,ele){
+      console.log($(ele).css("background-color"))
+	    if($(ele).css("background-color")=="rgb(0, 160, 233)"){
+        sun++;
+	   }
+	 })
+	// 满足 4项 继续进行
+	if(sun==4){	
+	  $(e.target).parent().css("display","none");
+   	  $(e.target).parent().next().css("display","block");
+   	  integral=20;
+   	  // $(".jifen .right").html(integral)
+   	  console.log(integral)
+	}else{
+	//不满足 
+	  $(".main").css("display","none")
+	  $(".ques_14").css("display","block")
+	  $(".jifen").css("display","none")
+	}
+})
+ // 第二项目
+  $("li").not($(".ques_1 li")).not($(".ques_9 li")).tap(function(e){
+    $("li").each(function(ind,ele){
+      $(ele).css("background-color","rgba(0, 0, 0, 0)")
+    })
+    $("e.target").css("background-color","rgb(0, 160, 233)")
+  })
+  $(".ques_2 .next").tap(function(e){
+     $(".ques_2 li").each(function(ind,ele){
+      if($(ele).css("background-color")=="rgb(0, 160, 233)"){
+      if(ele.className=="listnone1"){
+       integral+=21;
+         $(".jifen .right").html(integral)
+      }else if(ele.className=="listnone2"){
+       integral+=24;
+         $(".jifen .right").html(integral)
+      }else if(ele.className=="listnone3"){
+      integral+=27;
+         $(".jifen .right").html(integral)
+      }else if(ele.className=="listnone4"){
+      integral+=30;
+         $(".jifen .right").html(integral)
+      }else if(ele.className=="listnone5"){
+      integral+=33;
+         $(".jifen .right").html(integral)
+      }
+      }
+    })
+    $(e.target).parent().css("display","none");
+    $(e.target).parent().next().css("display","block"); 
+  })
+  $(".ques_3 .next").tap(function(e){
+     $(".ques_3 li").each(function(ind,ele){
+      if($(ele).css("background-color")=="rgb(0, 160, 233)"){
+      if(ele.className=="listnone1"){
+       integral+=1;
+       fangzi++;
+         $(".jifen .right").html(integral)
+      }else if(ele.className=="listnone2"){
+       integral+=2;
+       fangzi++;
+         $(".jifen .right").html(integral)
+      }else if(ele.className=="listnone3"){
+      integral+=3;
+      fangzi++;
+         $(".jifen .right").html(integral)
+      }else if(ele.className=="listnone4"){
+      integral+=4;
+      fangzi++;
+         $(".jifen .right").html(integral)
+      }else if(ele.className=="listnone5"){
+      integral+=0;
+         $(".jifen .right").html(integral)
+      }
+      }
+    })
+    $(e.target).parent().css("display","none");
+    $(e.target).parent().next().css("display","block"); 
+  })
+
+   $(".ques_4 .next").tap(function(e){
+     $(".ques_4 li").each(function(ind,ele){
+      if($(ele).css("background-color")=="rgb(0, 160, 233)"){
+      if(ele.className=="listnone1"){
+       integral+=0.5;
+         $(".jifen .right").html(integral)
+      }else if(ele.className=="listnone2"){
+       integral+=1;
+         $(".jifen .right").html(integral)
+      }else if(ele.className=="listnone3"){
+      integral+=1.5;
+         $(".jifen .right").html(integral)
+      }else if(ele.className=="listnone4"){
+      integral+=2;
+         $(".jifen .right").html(integral)
+      }else if(ele.className=="listnone5"){
+      integral+=0;
+         $(".jifen .right").html(integral)
+      }
+      }
+    })
+    $(e.target).parent().css("display","none");
+    $(e.target).parent().next().css("display","block");    
+  })
+
+  $(".ques_5 .next").tap(function(e){
+     $(".ques_5 li").each(function(ind,ele){
+  	  if($(ele).css("background-color")=="rgb(0, 160, 233)"){
+	  	if(ele.className=="listnone1"){
+	     integral+=10.5;
+   	     $(".jifen .right").html(integral)
+	  	}else if(ele.className=="listnone2"){
+	  	 integral+=15;
+   	     $(".jifen .right").html(integral)
+	  	}else if(ele.className=="listnone3"){
+	  	integral+=26;
+	  	xueli++;
+   	     $(".jifen .right").html(integral)
+	  	}else if(ele.className=="listnone4"){
+	  	integral+=37;
+	  	xueli++;
+   	     $(".jifen .right").html(integral)
+	  	}else if(ele.className=="listnone5"){
+	  	integral+=0;
+   	     $(".jifen .right").html(integral)
+	  	}
+  	  }
+    })
+    $(e.target).parent().css("display","none");
+   	$(e.target).parent().next().css("display","block");    
+  })
+
+  $(".ques_6 .next").tap(function(e){
+     $(".ques_6 li").each(function(ind,ele){
+      if($(ele).css("background-color")=="rgb(0, 160, 233)"){
+      if(ele.className=="listnone1"){
+       integral+=2;
+         $(".jifen .right").html(integral)
+      }else if(ele.className=="listnone2"){
+       integral+=4;
+         $(".jifen .right").html(integral)
+      }else if(ele.className=="listnone3"){
+      integral+=6;
+         $(".jifen .right").html(integral)
+      }else if(ele.className=="listnone4"){
+      integral+=6;
+         $(".jifen .right").html(integral)
+      }else if(ele.className=="listnone5"){
+      integral+=0;
+         $(".jifen .right").html(integral)
+      }
+      }
+    })
+    $(e.target).parent().css("display","none");
+    $(e.target).parent().next().css("display","block"); 
+ })
+   $(".ques_7 .next").tap(function(e){
+     $(".ques_7 li").each(function(ind,ele){
+      if($(ele).css("background-color")=="rgb(0, 160, 233)"){
+      if(ele.className=="listnone1"){
+       integral+=4;
+         $(".jifen .right").html(integral)
+      }else if(ele.className=="listnone2"){
+       integral+=8;
+         $(".jifen .right").html(integral)
+      }else if(ele.className=="listnone3"){
+      integral+=12;
+         $(".jifen .right").html(integral)
+      }else if(ele.className=="listnone4"){
+      integral+=12;
+         $(".jifen .right").html(integral)
+      }else if(ele.className=="listnone5"){
+      integral+=0;
+         $(".jifen .right").html(integral)
+      }
+      }
+    })
+    $(e.target).parent().css("display","none");
+    $(e.target).parent().next().css("display","block");    
+  })
+    $(".ques_8 .next").tap(function(e){
+     $(".ques_8 li").each(function(ind,ele){
+      if($(ele).css("background-color")=="rgb(0, 160, 233)"){
+      if(ele.className=="listnone1"){
+       integral+=12;
+         $(".jifen .right").html(integral)
+      }else if(ele.className=="listnone2"){
+       integral+=6;
+         $(".jifen .right").html(integral)
+      }else if(ele.className=="listnone3"){
+      integral+=2;
+         $(".jifen .right").html(integral)
+      }else if(ele.className=="listnone4"){
+      integral+=1;
+         $(".jifen .right").html(integral)
+      }else if(ele.className=="listnone5"){
+      integral+=0;
+         $(".jifen .right").html(integral)
+      }
+      }
+    })
+    $(e.target).parent().css("display","none");
+    $(e.target).parent().next().css("display","block");    
+  })
+  $(".ques_9 .next").tap(function(e){
+  	 var ques_90=0;
+     $(".ques_9 li").each(function(ind,ele){
+      if($(ele).css("background-color")=="rgb(0, 160, 233)"){
+      if(ele.className=="listnone1"){
+         ques_90++;
+      }else if(ele.className=="listnone2"){
+        ques_90++;
+      }else if(ele.className=="listnone3"){
+        ques_90++;
+      }else if(ele.className=="listnone4"){
+       ques_90++;
+      }else if(ele.className=="listnone5"){
+        ques_90=0;
+        
+      }
+      }
+    })
+     if(ques_90!=0){
+       integral+=20;
+       $(".jifen .right").html(integral)	
+     }
+    $(e.target).parent().css("display","none");
+    $(e.target).parent().next().css("display","block");    
+  })
+   $(".ques_10 .next").tap(function(e){
+     $(".ques_10 li").each(function(ind,ele){
+      if($(ele).css("background-color")=="rgb(0, 160, 233)"){
+      if(ele.className=="listnone1"){
+       integral+=6;
+         $(".jifen .right").html(integral)
+      }else if(ele.className=="listnone2"){
+       integral+=6;
+         $(".jifen .right").html(integral)
+      }else if(ele.className=="listnone3"){
+      integral+=0;
+         $(".jifen .right").html(integral)
+      }
+      }
+    })
+    $(e.target).parent().css("display","none");
+    $(e.target).parent().next().css("display","block");    
+  })
+     $(".ques_11 .next").tap(function(e){
+     $(".ques_11 li").each(function(ind,ele){
+      if($(ele).css("background-color")=="rgb(0, 160, 233)"){
+      if(ele.className=="listnone1"){
+       integral+=-12;
+         $(".jifen .right").html(integral)
+      }else if(ele.className=="listnone2"){
+       integral+=-24;
+         $(".jifen .right").html(integral)
+      }else if(ele.className=="listnone3"){
+      integral+=-48;
+         $(".jifen .right").html(integral)
+      }else if(ele.className=="listnone4"){
+      integral+=-60;
+         $(".jifen .right").html(integral)
+      }else if(ele.className=="listnone5"){
+      integral+=0;
+         $(".jifen .right").html(integral)
+      }
+      }
+    })
+    $(e.target).parent().css("display","none");
+    $(e.target).parent().next().css("display","block");    
+  })
+     $(".ques_12 .next").tap(function(e){
+     $(".ques_12 li").each(function(ind,ele){
+      if($(ele).css("background-color")=="rgb(0, 160, 233)"){
+      if(ele.className=="listnone1"){
+       integral+=-30;
+         $(".jifen .right").html(integral)
+      }else if(ele.className=="listnone2"){
+       integral+=-30;
+         $(".jifen .right").html(integral)
+      }else if(ele.className=="listnone3"){
+      integral+=-30;
+         $(".jifen .right").html(integral)
+      }else if(ele.className=="listnone4"){
+      integral+=-30;
+         $(".jifen .right").html(integral)
+      }else if(ele.className=="listnone5"){
+      integral+=0;
+         $(".jifen .right").html(integral)
+      }
+      }
+    }) 
+     $(".jifen").css("display","none");
+     $(".main").css("display","none");
+     $(".ques_13").css("display","block");  
+     $(".ques_13_f span:nth-of-type(1)").html(integral); 
+     var fenshu=(integral/240)*100;
+     if((integral/240)*100<0){
+     	fenshu=0;
+     }
+     $(".ques_13_p2 span:nth-of-type(2)").html( String(fenshu).slice(0,4) +"%"); 
+  })
+})
+// 再来一遍
+  $(".lastBtn1").tap(function(e){
+  $(".result").css("display","none")
+  $(".result .manzu").css("display","block")
+  $(".result .nomanzu").css("display","none")
+  $(".main").css("display","none")
+  window.location.href="index.html"
+})
+// 加分攻略
+ $(".lastBtn2").tap(function(e){
+   $(".main").css("display","none")
+   $(".hide1").css("display","block");
+   
+   if(fangzi==0){
+    $(".hide2")[0].style.backgroundImage="url(xia1.png)";
+    localStorage.setItem("idd","url(xia1.png)");
+   }
+   else if(xueli==0){
+   	$(".hide2")[0].style.backgroundImage="url(xia3.png)";
+   	localStorage.setItem("idd","url(xia3.png)");
+   }
+   else if(xueli!=0&&fangzi!=0&&integral>130){
+   	$(".hide2")[0].style.backgroundImage="url(xia2.png)";
+   	localStorage.setItem("idd","url(xia2.png)");
+   }
+   else{
+    $(".hide2")[0].style.backgroundImage="url(xia1.png)";
+    localStorage.setItem("idd","url(xia1.png)");
+   }
+ })
+  //分享
+ $(".fenxiang").tap(function(){ 
+   $(".fenxiang_div").css("display","block") 	
+ })
+//下载
+   $(".xiazai").tap(function(){
+   var ua = navigator.userAgent;
+    if(ua.toLowerCase().match(/MicroMessenger/i)=="micromessenger" ){
+     window.location.href="xiazai.html";
+    }
+   	else{	            
+       if(ua.indexOf('iPhone') >= 0){
+	       location.href="https://itunes.apple.com/cn/app/yin-hu-wang/id957750818?mt=8";
+	   }else if(ua.indexOf('Android') >= 0){
+	       location.href="http://a.app.qq.com/o/simple.jsp?pkgname=com.yinhu.app";
+	    }
+     } 
+   })
+//
+$(".fenxiang_div").tap(function(e){
+  e.stopPropagation()
+  $(".fenxiang_div").css("display","none");
+})
+</script>
+    </div>
+	</body>
+</html>
